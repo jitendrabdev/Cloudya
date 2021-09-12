@@ -1,6 +1,6 @@
 # Cloudya
 
-# UI automation using Pupeteer and API automation using postman. Attached postman collection file as "Cloudya.postman_collection.json". 
+# UI (FE) automation using Pupeteer and API (BE) automation using postman. Attached postman collection file as "Cloudya.postman_collection.json". 
 
 # Steps for project set up
 1.	Create project folder and Clone this repository.
