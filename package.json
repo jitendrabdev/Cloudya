@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx codeceptjs run --steps"
+    "test": "npx codeceptjs run --steps",
+    "testReport": "npx codeceptjs run --steps --reporter mochawesome"
   },
   "keywords": [],
   "author": "Jitendra Devargaonkar",
   "license": "ISC",
   "dependencies": {
     "codeceptjs": "^3.1.2",
+    "mochawesome": "^6.2.2",
     "puppeteer": "^10.2.0"
   }
 }

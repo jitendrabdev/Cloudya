@@ -1,0 +1,192 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-12T13:53:58.801Z",
+    "end": "2021-09-12T13:54:55.215Z",
+    "duration": 56414,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e99ba1a7-602a-470e-995b-1f0038d870c2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+          "title": "userLogin",
+          "fullFile": "C:\\automation\\Cloudya\\tests\\userLogin_test.js",
+          "file": "\\tests\\userLogin_test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite in \"userLogin\"",
+              "fullTitle": "userLogin \"before all\" hook: codeceptjs.beforeSuite in \"userLogin\"",
+              "timedOut": false,
+              "duration": 6,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "8833a127-31b6-406b-aa95-c0aaa9a8e809",
+              "parentUUID": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before in \"userLogin\"",
+              "fullTitle": "userLogin \"before each\" hook: codeceptjs.before in \"userLogin\"",
+              "timedOut": false,
+              "duration": 3248,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "3b7d90cf-e89b-4e70-b3d1-15319d3ce510",
+              "parentUUID": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: Before in \"userLogin\"",
+              "fullTitle": "userLogin \"before each\" hook: Before in \"userLogin\"",
+              "timedOut": false,
+              "duration": 11561,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "I }) => {\n  I.amOnPage(\"/login\");\n  let langSelList = await I.getLangList();\n  userInputData.langList = await langSelList;",
+              "err": {},
+              "uuid": "47a1fb67-47c7-4a3e-b5e3-f46e6835d26c",
+              "parentUUID": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite in \"userLogin\"",
+              "fullTitle": "userLogin \"after all\" hook: codeceptjs.afterSuite in \"userLogin\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "abad7116-9166-4481-9cfb-5de466f4be7a",
+              "parentUUID": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs in \"userLogin\"",
+              "fullTitle": "userLogin \"after each\" hook: finalize codeceptjs in \"userLogin\"",
+              "timedOut": false,
+              "duration": 1101,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "2beb448e-bf36-48f0-91b2-f4d6c3a43f48",
+              "parentUUID": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Verify user login",
+              "fullTitle": "userLogin: Verify user login",
+              "timedOut": false,
+              "duration": 40449,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "I }) => {\n  userInputData.langList.forEach((langOption) => {\n    I.langSelect(langOption);\n    I.userLogin(userInputData.email, userInputData.password);\n    I.userLogout();\n  });",
+              "err": {},
+              "uuid": "dcc0c7af-fc4b-4be9-9389-d5d59491ee4a",
+              "parentUUID": "935d3c14-b8b8-4fee-a4d3-b946a4850c9d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dcc0c7af-fc4b-4be9-9389-d5d59491ee4a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40449,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {},
+      "version": "5.2.0"
+    }
+  }
+}
