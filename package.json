@@ -1,0 +1,16 @@
+{
+  "name": "nfon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx codeceptjs run --steps"
+  },
+  "keywords": [],
+  "author": "Jitendra Devargaonkar",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^3.1.2",
+    "puppeteer": "^10.2.0"
+  }
+}
