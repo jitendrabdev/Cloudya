@@ -6,7 +6,7 @@ Before(async ({ I }) => {
   userInputData.langList = await langSelList;
 });
 
-Scenario("Verify user login", async ({ I }) => {
+Scenario("Verify user login", ({ I }) => {
   userInputData.langList.forEach((langOption) => {
     I.langSelect(langOption);
     I.userLogin(userInputData.email, userInputData.password);
