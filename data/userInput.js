@@ -1,5 +1,5 @@
 const { I } = inject();
-
+//User data use
 module.exports = {
   email: "qa+EHh4@nfon.com",
   password: "soo#Kee1ae",
