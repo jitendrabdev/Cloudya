@@ -1,12 +1,14 @@
 const loginPage = require("../pages/loginPage");
 const homePage = require("../pages/homePage");
-// in this file you can append custom step methods to 'I' object
 
-module.exports =  function() {
-
+module.exports = function () {
   return actor({
-
-   userLogin:  function(userLoginName, userPassword){
+    /**
+     * This funiction to login to application and verify the home page
+     * @param {*} userLoginName User name for login
+     * @param {*} userPassword User password for login
+     */
+    userLogin: function (userLoginName, userPassword) {
       this.fillField(loginPage.username, userLoginName);
       this.fillField(loginPage.passwordelement, userPassword);
       this.click(loginPage.loginBtn);
@@ -15,31 +17,39 @@ module.exports =  function() {
       this.waitForElement(homePage.pageTitle, 10);
       this.see("Cloudya", homePage.pageTitle);
       this.seeInCurrentUrl("/main/settings/user");
-      
     },
-
-    userLogout: function(){
+    /**
+     * This function used for logout user from application
+     */
+    userLogout: function () {
       this.waitForElement(homePage.userInfo, 5);
       this.click(homePage.userInfo);
       this.waitForElement(homePage.logoutBtn, 5);
       this.click(homePage.logoutBtn);
     },
-
-    langSelect: function(langOpton){
+    /**
+     * This function take localization code and change the the language of the application
+     * @param {*} langOpton Localization code
+     */
+    langSelect: function (langOpton) {
       this.waitForElement(loginPage.langSelect, 5);
       this.click(loginPage.langSelect);
-      this.click("//button[contains(text(),'"+ langOpton +"')]")
+      this.click("//button[contains(text(),'" + langOpton + "')]");
       this.waitForElement(loginPage.username, 5);
     },
-
-    getLangList: async function(){
+    /**
+     * This function returns the list of all localization code in list
+     * @returns
+     */
+    getLangList: async function () {
       this.waitForElement(loginPage.langSelect, 5);
       this.click(loginPage.langSelect);
-      let lst = await this.grabTextFromAll("//button[@role='menuitem']", "#text");
-      //this.pressKey("CommandOrControl", "Escape");
+      let langCode = await this.grabTextFromAll(
+        "//button[@role='menuitem']",
+        "#text"
+      );
       this.refreshPage();
-      return lst;
-    }
-    
+      return langCode;
+    },
   });
-}
+};
