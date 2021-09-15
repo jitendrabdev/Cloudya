@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx codeceptjs run --steps",
+    "login": "npx codeceptjs run --steps --grep '(?=.*@login)'",
+    "invalidlogin": "npx codeceptjs run --steps --grep '(?=.*@invalidlogin)'",
     "testReport": "npx codeceptjs run --steps --reporter mochawesome"
   },
   "keywords": [],
