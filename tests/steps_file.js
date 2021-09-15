@@ -8,15 +8,42 @@ module.exports = function () {
      * @param {*} userLoginName User name for login
      * @param {*} userPassword User password for login
      */
-    userLogin: function (userLoginName, userPassword) {
+    userLogin: async function (userLoginName, userPassword, antiRobotText) {
       this.fillField(loginPage.username, userLoginName);
       this.fillField(loginPage.passwordelement, userPassword);
+      this.waitForElement(loginPage.loginBtn, 20);
       this.click(loginPage.loginBtn);
+      /*
+      if (this.seeElement(loginPage.anitRobotValidationBtn)) {
+        this.click(loginPage.anitRobotValidation);
+        for (let i = 0; i < 20; i++) {
+          let tmpMsg = await this.grabTextFrom(
+            loginPage.antiRobotValidationMsg
+          );
+          if (tmpMsg == antiRobotText) {
+            break;
+          } else {
+            this.wait(1);
+          }
+        }
+        this.waitForEnabled(loginPage.loginBtn, 20);
+        this.click(loginPage.loginBtn);
+      }
+*/
       this.waitForElement(homePage.userName, 10);
       this.seeInField(homePage.userName, userLoginName);
       this.waitForElement(homePage.pageTitle, 10);
       this.see("Cloudya", homePage.pageTitle);
       this.seeInCurrentUrl("/main/settings/user");
+    },
+
+    invalidUserLogin: async function (userLoginName, userPassword, loginError) {
+      this.fillField(loginPage.username, userLoginName);
+      this.fillField(loginPage.passwordelement, userPassword);
+      this.click(loginPage.loginBtn);
+      this.waitForElement(loginPage.loginErr, 10);
+      let tempErr = await this.grabAttributeFrom(loginPage.loginErr, "#text");
+      this.see(loginError, tempErr);
     },
     /**
      * This function used for logout user from application
@@ -50,6 +77,14 @@ module.exports = function () {
       );
       this.refreshPage();
       return langCode;
+    },
+    antiRobot: async function (antiRobotBtnText) {
+      this.waitForElement(loginPage.anitRobotValidation, 10);
+      let btnText = await this.grabAttributeFrom(
+        loginPage.anitRobotValidation,
+        "text"
+      );
+      this.see(antiRobotBtnText, btnText);
     },
   });
 };
